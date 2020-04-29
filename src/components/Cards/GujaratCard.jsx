@@ -20,7 +20,7 @@ const  GujaratCard = (data) =>{
                             <CountUp start={0} end={parseInt(data.data.confirmed)} duration={4} separator=','/>
                         </Typography>
                         <Typography color="textSecondary" >
-                            {new Date(data.data.lastupdatedtime).toDateString()}
+                            {(data.data.lastupdatedtime)}
                         </Typography>
                         <Typography variant="body2">
                             Number of active cases of  covid-19
@@ -36,7 +36,7 @@ const  GujaratCard = (data) =>{
                             <CountUp start={0} end={parseInt(data.data.recovered)} duration={4} separator=','/>
                         </Typography>
                         <Typography color="textSecondary" >
-                        {new Date(data.data.lastupdatedtime).toDateString()}
+                        {data.data.lastupdatedtime}
                         </Typography>
                         <Typography variant="body2">
                             Number of Recovered cases of  covid-19
@@ -52,7 +52,7 @@ const  GujaratCard = (data) =>{
                             <CountUp start={0} end={parseInt(data.data.deaths)} duration={4} separator=','/>
                         </Typography>
                         <Typography color="textSecondary" >
-                        {new Date(data.data.lastupdatedtime).toDateString()}
+                        {data.data.lastupdatedtime}
                         </Typography>
                         <Typography variant="body2">
                             Number of Death cases due to covid-19
