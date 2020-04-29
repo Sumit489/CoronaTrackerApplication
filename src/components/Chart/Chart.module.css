@@ -1,7 +1,9 @@
 .container{
-    display: flex;
+    display:list-item;
     justify-content: center;
-    width: 85%;
+    width: 100%;
+    text-align: center;
+   
 }
 
 @media (max-width:770px){

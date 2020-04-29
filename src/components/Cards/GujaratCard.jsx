@@ -4,8 +4,8 @@ import styles from './Cards.module.css'
 import CountUp from 'react-countup'
 import cx from 'classnames'
 
-const  Cards = ({data:{confirmed,recovered,deaths,lastUpdate}} ) =>{
-    if(!confirmed){
+const  GujaratCard = (data) =>{
+    if(!data.data.confirmed){
         return 'Loading....'
     }
     return(
@@ -17,10 +17,10 @@ const  Cards = ({data:{confirmed,recovered,deaths,lastUpdate}} ) =>{
                             Infected
                         </Typography>
                         <Typography variant="h5" >
-                            <CountUp start={0} end={confirmed.value} duration={4} separator=','/>
+                            <CountUp start={0} end={parseInt(data.data.confirmed)} duration={4} separator=','/>
                         </Typography>
                         <Typography color="textSecondary" >
-                            {new Date(lastUpdate).toDateString()}
+                            {new Date(data.data.lastupdatedtime).toDateString()}
                         </Typography>
                         <Typography variant="body2">
                             Number of active cases of  covid-19
@@ -33,10 +33,10 @@ const  Cards = ({data:{confirmed,recovered,deaths,lastUpdate}} ) =>{
                             Recovered
                         </Typography>
                         <Typography variant="h5" >
-                            <CountUp start={0} end={recovered.value} duration={4} separator=','/>
+                            <CountUp start={0} end={parseInt(data.data.recovered)} duration={4} separator=','/>
                         </Typography>
                         <Typography color="textSecondary" >
-                        {new Date(lastUpdate).toDateString()}
+                        {new Date(data.data.lastupdatedtime).toDateString()}
                         </Typography>
                         <Typography variant="body2">
                             Number of Recovered cases of  covid-19
@@ -49,10 +49,10 @@ const  Cards = ({data:{confirmed,recovered,deaths,lastUpdate}} ) =>{
                             Death
                         </Typography>
                         <Typography variant="h5" >
-                            <CountUp start={0} end={deaths.value} duration={4} separator=','/>
+                            <CountUp start={0} end={parseInt(data.data.deaths)} duration={4} separator=','/>
                         </Typography>
                         <Typography color="textSecondary" >
-                        {new Date(lastUpdate).toDateString()}
+                        {new Date(data.data.lastupdatedtime).toDateString()}
                         </Typography>
                         <Typography variant="body2">
                             Number of Death cases due to covid-19
@@ -64,4 +64,4 @@ const  Cards = ({data:{confirmed,recovered,deaths,lastUpdate}} ) =>{
     )
 }
 
-export default Cards
+export default GujaratCard
